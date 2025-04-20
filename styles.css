@@ -6,29 +6,52 @@
     --bbc-border: #CCCCCC;
     --bbc-link: #0068FF;
     --bbc-yellow: #FDDB01;
+    
+    /* Theme colors - light mode by default */
+    --background-color: #FFFFFF;
+    --text-color: var(--bbc-black);
+    --secondary-background: var(--bbc-light-gray);
+    --header-background: #FFFFFF;
+    --border-color: var(--bbc-border);
+    --link-hover: var(--bbc-red);
+    --card-background: #FFFFFF;
+}
+
+/* Dark mode variables */
+[data-theme="dark"] {
+    --background-color: #181818;
+    --text-color: #e9e9e9;
+    --secondary-background: #222222;
+    --header-background: #121212;
+    --border-color: #444444;
+    --link-hover: #ff4646;
+    --card-background: #242424;
 }
 
 body {
     font-family: "BBC Reith Sans", Arial, Helvetica, sans-serif;
     line-height: 1.5;
-    color: var(--bbc-black);
-    background-color: #FFFFFF;
+    color: var(--text-color);
+    background-color: var(--background-color);
     margin: 0;
     padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Header Styles - Updated for BBC look */
 header {
-    background-color: #FFFFFF;
-    border-bottom: 1px solid var(--bbc-border);
+    background-color: var(--header-background);
+    border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;
     z-index: 1000;
+    transition: background-color 0.3s ease;
 }
 
 .top-nav {
-    background-color: #FFFFFF;
+    background-color: var(--header-background);
     padding: 10px 0;
+    transition: background-color 0.3s ease;
 }
 
 .top-nav-container {
@@ -131,10 +154,60 @@ header {
     color: var(--bbc-red);
 }
 
+/* Theme toggle button styles */
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    border-radius: 50%;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background-color: var(--secondary-background);
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+.theme-toggle i {
+    font-size: 18px;
+    position: absolute;
+    transition: all 0.3s ease;
+    color: var(--text-color);
+}
+
+.theme-toggle .fa-sun {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.theme-toggle .fa-moon {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+[data-theme="dark"] .theme-toggle .fa-sun {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+[data-theme="dark"] .theme-toggle .fa-moon {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* Main Navigation - Updated to center links */
 .main-nav {
-    border-bottom: 1px solid var(--bbc-border);
-    background-color: #FFFFFF;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--header-background);
+    transition: background-color 0.3s ease;
 }
 
 .main-nav-links {
@@ -155,10 +228,11 @@ header {
     display: inline-block;
     padding: 12px 15px;
     text-decoration: none;
-    color: var(--bbc-black);
+    color: var(--text-color);
     font-weight: 500;
     border-bottom: 4px solid transparent;
     font-size: 15px;
+    transition: color 0.3s ease;
 }
 
 .main-nav-links a.active {
@@ -179,14 +253,15 @@ main {
 /* Lead story styles */
 .lead-story {
     margin-bottom: 24px;
-    border-bottom: 1px solid var(--bbc-border);
+    border-bottom: 1px solid var(--border-color);
     padding-bottom: 24px;
 }
 
 .story-link {
     text-decoration: none;
-    color: var(--bbc-black);
+    color: var(--text-color);
     display: block;
+    transition: color 0.3s ease;
 }
 
 .story-media {
@@ -239,7 +314,7 @@ main {
 
 .story-item {
     padding: 24px 0;
-    border-bottom: 1px solid var(--bbc-border);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .story-item .story-media {
@@ -248,9 +323,10 @@ main {
 
 /* Side column styles */
 .side-section {
-    background-color: var(--bbc-light-gray);
+    background-color: var(--secondary-background);
     padding: 20px;
     border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
 .side-section h2 {
@@ -312,9 +388,10 @@ main {
 
 .promo-item {
     padding: 15px;
-    background-color: #FFFFFF;
+    background-color: var(--card-background);
     border-radius: 4px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
 }
 
 .promo-item h4 {

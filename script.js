@@ -19,6 +19,35 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Dark mode toggle functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    
+    // Check for saved theme preference or use device preference
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    // If saved theme exists, use it, otherwise use device preference
+    if (savedTheme === 'dark' || (!savedTheme && prefersDarkScheme)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+    }
+    
+    // Add event listener for theme toggle button
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+            // Toggle theme
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            // Update theme attribute
+            document.documentElement.setAttribute('data-theme', newTheme);
+            
+            // Save preference to localStorage
+            localStorage.setItem('theme', newTheme);
+        });
+    }
+    
     // Handle window resize to hide mobile menu when switching to desktop
     window.addEventListener('resize', function() {
         if (window.innerWidth > 991 && navLinks.classList.contains('show')) {

@@ -1,22 +1,24 @@
 # BBC Clone Website
 
-A responsive clone of the BBC News website built with HTML, CSS, JavaScript, and Bootstrap.
+A responsive clone of the BBC News website built with HTML, CSS, JavaScript, and Bootstrap, featuring both light and dark modes.
 
-![BBC Clone Screenshot](https://via.placeholder.com/800x400?text=BBC+Clone+Website)
+![BBC Clone Screenshot](image.png)
 
 ## Project Overview
 
-This project is a front-end implementation of a BBC News website clone. It features a responsive design that works across different screen sizes and devices, mimicking the clean and organized layout of the BBC News website.
+This project is a front-end implementation of a BBC News website clone. It features a responsive design that works across different screen sizes and devices, mimicking the clean and organized layout of the BBC News website. The site also includes a modern dark mode toggle for enhanced user experience and accessibility.
 
 ## Features
 
 - Responsive navigation with mobile hamburger menu
+- Dark mode toggle with sun/moon icons and preference saving
 - BBC-styled header with logo and account links
 - Main news content with featured stories
 - Side column with video content and promotional sections
 - Mobile-friendly design that adapts to different screen sizes
 - Search functionality
 - Breaking news banner capability
+- Theme preference persistence using localStorage
 
 ## Technologies Used
 
@@ -25,6 +27,7 @@ This project is a front-end implementation of a BBC News website clone. It featu
 - JavaScript
 - Bootstrap 5
 - Font Awesome icons
+- CSS Custom Properties (variables) for theming
 
 ## File Structure
 
