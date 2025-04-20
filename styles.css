@@ -1,0 +1,431 @@
+:root {
+    --bbc-red: #BB1919;
+    --bbc-black: #121212;
+    --bbc-dark-gray: #333333;
+    --bbc-light-gray: #F6F6F6;
+    --bbc-border: #CCCCCC;
+    --bbc-link: #0068FF;
+    --bbc-yellow: #FDDB01;
+}
+
+body {
+    font-family: "BBC Reith Sans", Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    color: var(--bbc-black);
+    background-color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles - Updated for BBC look */
+header {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid var(--bbc-border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.top-nav {
+    background-color: #FFFFFF;
+    padding: 10px 0;
+}
+
+.top-nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+}
+
+/* Updated Hamburger Menu Toggle */
+.nav-menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hamburger-search {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid #e6e6e6;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 15px;
+    margin-right: 10px;
+}
+
+.menu-icon span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background-color: #121212;
+}
+
+.search-icon {
+    font-size: 15px;
+    color: #121212;
+}
+
+.bbc-logo-container {
+    display: flex;
+    justify-content: center;
+}
+
+.bbc-logo {
+    display: flex;
+    text-decoration: none;
+}
+
+.bbc-logo span {
+    display: inline-block;
+    background-color: var(--bbc-black);
+    color: #FFFFFF;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-weight: bold;
+    margin-right: 1px;
+    font-size: 18px;
+}
+
+/* Account section styling - Improved */
+.account-section {
+    display: flex;
+    gap: 25px;
+}
+
+.account-link {
+    color: var(--bbc-black);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    position: relative;
+}
+
+.account-link:first-child::after {
+    content: "";
+    position: absolute;
+    right: -12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 16px;
+    background-color: var(--bbc-border);
+}
+
+.account-link:hover {
+    text-decoration: underline;
+    color: var(--bbc-red);
+}
+
+/* Main Navigation - Updated to center links */
+.main-nav {
+    border-bottom: 1px solid var(--bbc-border);
+    background-color: #FFFFFF;
+}
+
+.main-nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    justify-content: center; /* Center the navigation links */
+}
+
+.main-nav-links li {
+    white-space: nowrap;
+}
+
+.main-nav-links a {
+    display: inline-block;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: var(--bbc-black);
+    font-weight: 500;
+    border-bottom: 4px solid transparent;
+    font-size: 15px;
+}
+
+.main-nav-links a.active {
+    border-bottom: 4px solid var(--bbc-red);
+    font-weight: 700;
+}
+
+.main-nav-links a:hover {
+    border-bottom: 4px solid var(--bbc-red);
+}
+
+/* Main Content Styles - Updated for BBC layout */
+main {
+    background-color: #FFFFFF;
+    padding: 20px 0;
+}
+
+/* Lead story styles */
+.lead-story {
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--bbc-border);
+    padding-bottom: 24px;
+}
+
+.story-link {
+    text-decoration: none;
+    color: var(--bbc-black);
+    display: block;
+}
+
+.story-media {
+    margin-bottom: 15px;
+}
+
+.story-media img {
+    width: 100%;
+}
+
+.story-content h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    line-height: 1.2;
+}
+
+.story-content h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.story-content p {
+    color: #545454;
+    font-size: 16px;
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.story-time {
+    display: inline-block;
+    color: #757575;
+    font-size: 14px;
+    margin-right: 12px;
+}
+
+.story-category {
+    display: inline-block;
+    color: #757575;
+    font-size: 14px;
+}
+
+/* Story list styles */
+.story-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.story-item {
+    padding: 24px 0;
+    border-bottom: 1px solid var(--bbc-border);
+}
+
+.story-item .story-media {
+    margin-bottom: 15px;
+}
+
+/* Side column styles */
+.side-section {
+    background-color: var(--bbc-light-gray);
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.side-section h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--bbc-border);
+    padding-bottom: 10px;
+}
+
+.watch-item {
+    margin-bottom: 24px;
+}
+
+.video-container {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.live-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: var(--bbc-red);
+    color: #FFFFFF;
+    padding: 4px 8px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 2px;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    font-size: 24px;
+}
+
+.watch-item h3 {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* Promo sections */
+.promo-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.promo-item {
+    padding: 15px;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.promo-item h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.promo-item p {
+    font-size: 14px;
+    color: #545454;
+    margin: 0;
+}
+
+/* Responsive styles */
+@media (max-width: 991px) {
+    .main-nav-links {
+        overflow-x: auto;
+    }
+    
+    .story-content h2 {
+        font-size: 24px;
+    }
+    
+    .story-content h3 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 767px) {
+    .account-section {
+        display: none;
+    }
+    
+    .story-content h2 {
+        font-size: 20px;
+    }
+    
+    .side-section {
+        margin-top: 30px;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: var(--bbc-black);
+    color: white;
+    padding: 40px 0 20px;
+}
+
+.footer-top {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.bbc-footer-logo {
+    display: inline-flex;
+}
+
+.bbc-footer-logo span {
+    display: inline-block;
+    background-color: white;
+    color: var(--bbc-black);
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    margin-right: 4px;
+    font-size: 24px;
+}
+
+.footer-links {
+    margin-bottom: 30px;
+}
+
+.footer-links h4 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    font-size: 12px;
+    color: #ccc;
+}
+
+.footer-bottom a {
+    color: #ccc;
+}
